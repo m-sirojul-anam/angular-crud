@@ -1,0 +1,35 @@
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+    
+    <div class="col-12 justify-content ">
+       
+        <div class="col-6 border">
+          <form class="row mx-5 my-3" [formGroup]="storeForm" (ngSubmit)="onSubmit()">
+              <h1 class="h2 text-center mb-3">Store Form</h1>
+                <div class="col-md-12">
+                  <label for="inputEmail4" class="form-label">No SIUP</label>
+                  <input type="text" class="form-control" id="inputEmail4" formControlName="noSiup">
+                </div>
+                <div class="col-md-12">
+                  <label for="inputPassword4" class="form-label">Store Name</label>
+                  <input type="text" class="form-control" id="inputPassword4" formControlName="name">
+                </div>
+                <div class="col-md-12">
+                  <label for="inputEmail4" class="form-label">Email</label>
+                  <input type="text" class="form-control" id="inputEmail4" formControlName="email">
+                </div>
+                <div class="col-md-12">
+                  <label for="inputPassword4" class="form-label">Phone Number</label>
+                  <input type="text" class="form-control" id="inputPassword4" formControlName="phone">
+                </div>
+                <div class="col-12">
+                    <label for="inputAddress2" class="form-label">Address</label>
+                    <textarea type="text" class="form-control" id="inputAddress2" rows="3" formControlName="address"></textarea>
+                  </div>
+                <div class="col-12 mt-3">
+                  <button type="submit" class="btn btn-danger px-5 mx-4" routerLink="/pages/stores">Cancel</button>
+                  <button type="submit" class="btn btn-primary px-5 mx-4">Add Data</button>
+                </div>
+              </form>
+        </div>
+    </div>
+</div>

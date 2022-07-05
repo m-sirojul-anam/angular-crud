@@ -1,0 +1,52 @@
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Products</h1>
+    <div class="btn-toolbar mb-2 mb-md-0">
+          
+            <button class="btn btn-primary px-5 text-align-center" routerLink="/pages/products/add"><i class="material-icons" style="font-size: 18px;">add</i><i>Add New Data</i></button>
+          
+    </div>
+  </div>
+
+  <div class="table-responsive">
+    <table class="table table-striped table-sm">
+      <thead class="bg-dark text-white">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Description</th>
+          <th scope="col">Image</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <td colspan="6" rowspan="6" *ngIf="loading === true">
+          <div class="loader2">Loading..</div>
+        </td>
+        <td *ngIf="loading === false && products.length === 0" colspan="6" rowspan="6"><h1 class="text-center mt-5">No Data</h1></td>
+        <tr  *ngFor="let item of products; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ item.name }}</td>
+          <td>{{ item.description }}</td>
+          <td>cooming soon</td>
+          <td>
+            <!--EDIT-->
+            <button 
+            class="btn bg-primary mx-1" 
+            title="Edit" 
+            style="height: 31px;"
+            routerLink="/pages/products/edit/{{ item.id }}"
+            >
+            <i class="material-icons" style="font-size:18px;">edit</i>
+            </button>
+            
+            <!--DELETE-->
+            <button 
+            class="btn bg-danger mx-1" 
+            title="Delete" 
+            style="height: 31px;"
+            routerLink="/pages/products/{{ item.id }}"
+            (click)="onDeletedProduct(item.id)"
+            >
+            <i class="material-icons"  style="font-size:18px;">delete</i>
+            </button>
+          </td>

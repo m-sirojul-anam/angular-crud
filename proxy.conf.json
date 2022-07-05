@@ -1,0 +1,10 @@
+{
+    "/enigmashop": {
+        "target": "http://localhost:8080/enigmashop/",
+        "logLevel": "debug",
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/enigmashop": ""
+        }
+    }
+}

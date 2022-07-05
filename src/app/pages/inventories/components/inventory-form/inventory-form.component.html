@@ -1,0 +1,41 @@
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+    
+    <div class="col-12 justify-content ">
+       
+        <div class="col-6 border">
+            <h1 class="h2 text-center">Inventory Form</h1>
+            <form class="row mx-5 my-5" [formGroup]="inventoryForm" (ngSubmit)="onSubmit()">
+                <div class="col-md-6">
+                  <label for="inputEmail4" class="form-label">Product Name</label>
+                  <div class="wrapper">
+                  <select class="form-select" formControlName="product">
+                    <option [ngValue]="null" disabled>Select Product</option>
+                    <option *ngFor="let key of tempProducts" [ngValue]="product" style="color: rgb(255, 255, 255); background-color: rgb(105, 105, 105);">{{ key.name }} </option>
+                    <option *ngFor="let item of products" [ngValue]="item">{{ item.name }}</option>
+                  </select>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <label for="inputPassword4" class="form-label">Product Price</label>
+                  <input type="number" class="form-control" id="inputPassword4" formControlName="productPrice">
+                </div>
+                <div class="col-md-6">
+                  <label for="inputEmail4" class="form-label">Store Name</label>
+                  <select class="form-select" formControlName="store">
+                    <option [ngValue]="null" disabled>Select Store</option>
+                    <option *ngFor="let key of tempStores" [ngValue]="store" style="color: rgb(255, 255, 255); background-color: rgb(105, 105, 105);">{{ key.name }}</option>
+                    <option *ngFor="let item of stores" [ngValue]="item">{{ item.name }}</option>
+                  </select>
+                </div>
+                <div class="col-md-6 ">
+                  <label for="inputPassword" class="form-label">Stock</label>
+                  <input type="number" class="form-control" id="inputPassword" formControlName="stock">
+                </div>
+                <div class="col-12 mt-3">
+                  <button type="reset" class="btn btn-danger px-5 mx-4" routerLink="/pages/inventories">Cancel</button>
+                  <button type="submit" class="btn btn-primary px-5 mx-4">Add Data</button>
+                </div>
+              </form>
+        </div>
+    </div>
+</div>
